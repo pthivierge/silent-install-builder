@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9DD10D98-2040-4650-AC55-2BF2498D65DF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SilentPackagesBuilder</RootNamespace>
+    <AssemblyName>SilentPackagesBuilder</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\log4net.2.0.8\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PropertyChanged, Version=1.52.1.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PropertyChanged.Fody.1.52.1\lib\portable-net4+sl4+wp8+win8+wpa81+MonoAndroid16+MonoTouch40\PropertyChanged.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ScintillaNET, Version=3.6.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\jacobslusser.ScintillaNET.3.6.3\lib\net40\ScintillaNET.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\BindableToolStripStatusLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="frmDefineVariables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDefineVariables.Designer.cs">
+      <DependentUpon>frmDefineVariables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNewPackage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewPackage.Designer.cs">
+      <DependentUpon>frmNewPackage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOptions.Designer.cs">
+      <DependentUpon>frmOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DefineVariables\DefineVariablesDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DefineVariables\DefineVariablesDemo.Designer.cs">
+      <DependentUpon>DefineVariablesDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PackagesList\frmPackageEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PackagesList\frmPackageEditor.Designer.cs">
+      <DependentUpon>frmPackageEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IModelSettableControl.cs" />
+    <Compile Include="Views\PackageEditor\Editors\ExecutableParametersEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PackageEditor\Editors\ExecutableParametersEditor.Designer.cs">
+      <DependentUpon>ExecutableParametersEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PackageEditor\Editors\IniReplacementsEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PackageEditor\Editors\IniReplacementsEditor.Designer.cs">
+      <DependentUpon>IniReplacementsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PackageEditor\PackageEditorDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PackageEditor\PackageEditorDemo.Designer.cs">
+      <DependentUpon>PackageEditorDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PackageEditor\PackageEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PackageEditor\PackageEditorControl.Designer.cs">
+      <DependentUpon>PackageEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PackageEditor\PackageEditorViewModel.cs" />
+    <Compile Include="Views\PackageEditor\Editors\ScriptEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PackageEditor\Editors\ScriptEditor.Designer.cs">
+      <DependentUpon>ScriptEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PackagesList\PackagesListDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PackagesList\PackagesListDemo.Designer.cs">
+      <DependentUpon>PackagesListDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PackagesList\PackagesListViewModel.cs" />
+    <Compile Include="Views\PackagesList\PackagesListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PackagesList\PackagesListControl.Designer.cs">
+      <DependentUpon>PackagesListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PackagesSearch\PackageSearchModel.cs" />
+    <Compile Include="PowershellConfig.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serializer.cs" />
+    <Compile Include="SilentPackageGenerator.cs" />
+    <Compile Include="UserSettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>UserSettings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PackagesSearch\PackageSearchcontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PackagesSearch\PackageSearchcontrol.Designer.cs">
+      <DependentUpon>PackageSearchcontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PackagesSearch\PackageSearchControlDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PackagesSearch\PackageSearchControlDemo.Designer.cs">
+      <DependentUpon>PackageSearchControlDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PackageSearchViewModel.cs" />
+    <Compile Include="Views\DefineVariables\VariablesDefinitionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\DefineVariables\VariablesDefinitionControl.Designer.cs">
+      <DependentUpon>VariablesDefinitionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TemplateEmptyView\EmptyViewModel.cs" />
+    <Compile Include="Views\TemplateEmptyView\EmptyModel.cs" />
+    <Compile Include="Views\TemplateEmptyView\EmptyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\TemplateEmptyView\EmptyControl.Designer.cs">
+      <DependentUpon>EmptyControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmDefineVariables.resx">
+      <DependentUpon>frmDefineVariables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewPackage.resx">
+      <DependentUpon>frmNewPackage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOptions.resx">
+      <DependentUpon>frmOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DefineVariables\DefineVariablesDemo.resx">
+      <DependentUpon>DefineVariablesDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PackagesList\frmPackageEditor.resx">
+      <DependentUpon>frmPackageEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PackageEditor\Editors\ExecutableParametersEditor.resx">
+      <DependentUpon>ExecutableParametersEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PackageEditor\Editors\IniReplacementsEditor.resx">
+      <DependentUpon>IniReplacementsEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PackageEditor\Editors\ScriptEditor.resx">
+      <DependentUpon>ScriptEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PackageEditor\PackageEditorDemo.resx">
+      <DependentUpon>PackageEditorDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PackageEditor\PackageEditorControl.resx">
+      <DependentUpon>PackageEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PackagesList\PackagesListControl.resx">
+      <DependentUpon>PackagesListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PackagesList\PackagesListDemo.resx">
+      <DependentUpon>PackagesListDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PackagesSearch\PackageSearchcontrol.resx">
+      <DependentUpon>PackageSearchcontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PackagesSearch\PackageSearchControlDemo.resx">
+      <DependentUpon>PackageSearchControlDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DefineVariables\VariablesDefinitionControl.resx">
+      <DependentUpon>VariablesDefinitionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TemplateEmptyView\EmptyControl.resx">
+      <DependentUpon>EmptyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="UserSettings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>UserSettings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FodyWeavers.xml" />
+    <Content Include="log4net.config.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\help.ico" />
+    <Content Include="Resources\help.png" />
+    <None Include="Resources\silent-package-builder.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SilentPackagesBuilder.Core\SilentPackagesBuilder.Core.csproj">
+      <Project>{82fab574-cd19-4491-bc1f-b02c0cd6e65f}</Project>
+      <Name>SilentPackagesBuilder.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+      ::----------------------------------------
+      :: Copy to buid folder
+      ::----------------------------------------
+      :copytoBuildFolder current location is the /bin/debug going to the solution level
+      SET output="..\..\..\Build"
+      if not exist "%25output%25" mkdir "%25output%25"
+
+      :: ------------ BUILD  -----------------
+
+      SET pstemp="..\..\..\..\Build\powershell-template"
+      if not exist "%25pstemp%25" mkdir "%25pstemp%25"
+
+      :: --- powershell template files - into build folder
+      robocopy "$(SolutionDir)src\installer\." "%25pstemp%25\." /MIR /XD bin obj  /XF *.psd1 *.pssproj *.txt *.xml
+
+      :: --- Silent packages builder main files
+      robocopy "$(TargetDir)." "%25output%25\."  SilentPackagesBuilder.exe SilentPackagesBuilder.pdb SilentPackagesBuilder.exe.config /XO /NJH /NP /S
+
+      :: --- silent packages builder supporting binaries
+      SET bin="..\..\..\..\Build\Bin"
+      if not exist "%25bin%25" mkdir "%25pstemp%25"
+      robocopy "$(TargetDir)." "%25bin%25\." log4net.dll ScintillaNET.* SilentPackagesBuilder.Core.* /XO /NJH /NP /S
+
+
+      :: ------------ DEV -----------------
+      SET pstemp="$(TargetDir)\powershell-template"
+      if not exist "%25pstemp%25" mkdir "%25pstemp%25"
+
+      :: --- powershell template files into project/bin/debug folder
+      robocopy "$(SolutionDir)src\installer\." "%25pstemp%25\." /MIR /XD bin obj /XF *.psd1 *.pssproj *.txt *.xml
+
+
+      if errorlevel 4 goto BuildEventFailed
+      if errorlevel 0 goto end
+
+      :BuildEventFailed echo FILECOPY for $(ProjectName) FAILED
+      exit 1
+      :end echo FILECOPY for $(ProjectName) COMPLETED OK
+      exit 0</PostBuildEvent>
+  </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <Error Condition="!Exists('..\..\packages\Fody.1.29.2\build\portable-net+sl+win+wpa+wp\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Fody.1.29.2\build\portable-net+sl+win+wpa+wp\Fody.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\Fody.1.29.2\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('..\..\packages\Fody.1.29.2\build\portable-net+sl+win+wpa+wp\Fody.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

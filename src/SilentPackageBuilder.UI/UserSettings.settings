@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SilentPackagesBuilder" GeneratedClassName="UserSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="LastSelectedPackagesDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">c:\</Value>
+    </Setting>
+    <Setting Name="LastSelectedPackGenExportDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">c:\</Value>
+    </Setting>
+    <Setting Name="LastSavedProjectFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PackGenConfigFileName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">InstallConfig.psd1</Value>
+    </Setting>
+    <Setting Name="PackGenLastSuccessExportedPackageDir" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UIOpenEditorOnAdd" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="PackGenUserVariablesFileName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SetupVariablesDefinitions.psd1</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

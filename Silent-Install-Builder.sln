@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "silent-installation-scripts", "src\installer\silent-installation-scripts.pssproj", "{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}"
+EndProject
+Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "silent-installation-scripts-tests", "src\powershell-tests\silent-installation-scripts-tests.pssproj", "{29F40B30-B78F-4995-9265-0B3B249FB0C1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{A75BE5B6-682D-49D3-91BF-236A07DF26EA}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilentPackagesBuilderGUI", "src\SilentPackageBuilder.UI\SilentPackagesBuilderGUI.csproj", "{9DD10D98-2040-4650-AC55-2BF2498D65DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilentPackagesBuilder.Core", "src\SilentPackagesBuilder.Core\SilentPackagesBuilder.Core.csproj", "{82FAB574-CD19-4491-BC1F-B02C0CD6E65F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilentPackageBuilder.Tests", "src\SilentPackageBuilder.Tests\SilentPackageBuilder.Tests.csproj", "{674C0840-9AE3-4DD0-8F7E-54E933CBF15B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Licenses", "Licenses", "{FDB96E0F-1919-4844-A973-2FF66A26305B}"
+	ProjectSection(SolutionItems) = preProject
+		licenses\7za.GNU LGPL.txt = licenses\7za.GNU LGPL.txt
+		licenses\Autologon.Microsoft limited public license.txt = licenses\Autologon.Microsoft limited public license.txt
+		licenses\Foody.MIT.txt = licenses\Foody.MIT.txt
+		licenses\Grant-UserRight.Microsoft limited public license.txt = licenses\Grant-UserRight.Microsoft limited public license.txt
+		licenses\log4net.Apache.txt = licenses\log4net.Apache.txt
+		licenses\Scintilla.NET.MIT.txt = licenses\Scintilla.NET.MIT.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29F40B30-B78F-4995-9265-0B3B249FB0C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29F40B30-B78F-4995-9265-0B3B249FB0C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29F40B30-B78F-4995-9265-0B3B249FB0C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29F40B30-B78F-4995-9265-0B3B249FB0C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DD10D98-2040-4650-AC55-2BF2498D65DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DD10D98-2040-4650-AC55-2BF2498D65DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DD10D98-2040-4650-AC55-2BF2498D65DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DD10D98-2040-4650-AC55-2BF2498D65DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82FAB574-CD19-4491-BC1F-B02C0CD6E65F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82FAB574-CD19-4491-BC1F-B02C0CD6E65F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82FAB574-CD19-4491-BC1F-B02C0CD6E65F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82FAB574-CD19-4491-BC1F-B02C0CD6E65F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{674C0840-9AE3-4DD0-8F7E-54E933CBF15B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{674C0840-9AE3-4DD0-8F7E-54E933CBF15B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{674C0840-9AE3-4DD0-8F7E-54E933CBF15B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{674C0840-9AE3-4DD0-8F7E-54E933CBF15B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FDB96E0F-1919-4844-A973-2FF66A26305B} = {A75BE5B6-682D-49D3-91BF-236A07DF26EA}
+	EndGlobalSection
+EndGlobal

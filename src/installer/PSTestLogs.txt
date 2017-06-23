@@ -1,0 +1,27 @@
+17:59:41:351 - Logging.tests.ps1 - test
+18:12:50:995 - Logger.psm1 - Module installation completed in: System.Diagnostics.Stopwatch.Elapsed.ToString()
+18:13:47:340 - Logger.psm1 - Module installation completed in: 00:00:00.0017101
+18:16:08:211 - Logger.psm1 - Module installation completed in: HH:mm:ss:fff
+18:16:22:276 - Logger.psm1 - Module installation completed in: HH:mm:ss:fff
+18:22:19:325 - Logger.psm1 - Module installation completed in: 00:00:00.0006023:hh:mm:ss.fff
+18:24:51:599 - Logger.psm1 - Module installation completed in: 00:00:00.0005945
+18:26:15:021 - Logger.psm1 - Module installation completed in: 000
+18:26:27:690 - Logger.psm1 - Module installation completed in: 00:00:00.0001027
+18:31:23:597 - Logger.psm1 - 18:31:23:596 - Logging.tests.ps1 - Module installation completed in 00:00:00.0027902
+18:32:42:942 - Logger.psm1 - Module installation completed in: 00:00:00.0006828
+11:51:57:552 - Logging.tests.ps1 - test
+11:51:58:831 - Logging.tests.ps1 - Module installation completed in: 00:00:00.0037840
+12:13:11:661 - Logging.tests.ps1 - test
+12:13:12:684 - Logging.tests.ps1 - Module installation completed in: 00:00:00.0044566
+12:13:29:425 - Logging.tests.ps1 - test
+12:13:29:821 - Logging.tests.ps1 - Module installation completed in: 00:00:00.0001238
+16:27:47:874 - Logging.tests.ps1 - test
+16:27:48:222 - Logging.tests.ps1 - Module installation completed in: 00:00:00.0002118
+16:30:28:337 - Logging.tests.ps1 - test
+16:30:29:524 - Logging.tests.ps1 - Module installation completed in: 00:00:00.0041920
+00:14:43:193 - Logging.tests.ps1 - test
+00:14:43:969 - Logging.tests.ps1 - Module installation completed in: 00:00:00.0040028
+18:47:54:561 - Logging.tests.ps1 - test
+18:48:01:924 - Logging.tests.ps1 - Module installation completed in: 00:00:00.0052091
+18:55:05:796 - Logging.tests.ps1 - test
+18:55:06:792 - Logging.tests.ps1 - Module installation completed in: 00:00:00.0077498

@@ -1,0 +1,25 @@
+10:22:49:007 - setup.ps1 - Silent Installation started at 10-25-2016 10:22:48
+10:22:49:132 - setup.ps1 - Loading settings from InstallConfig.psd1
+10:22:53:007 - setup.ps1 - Task PISystem-Silent-Install-Resume already exist. No need to create it
+10:22:53:022 - setup.ps1 - Setup will proceed with package PS Task - Package:  - Type: PSCodeBlock - Install: 1
+10:22:53:178 - bin Modules obj 7za.exe InstallConfig.psd1 pi-system-silent-installer.pssproj pilicense.dat RunSetup.bat setup.ps1 silent-installation-logs.txt silent-installation-progressConfig.xml - cooolll!!!!
+10:22:55:147 - Utils.psm1 - Task PISystem-Silent-Install-Resume was removed
+10:22:55:225 - setup.ps1 - Silent Installation finished at 10-25-2016 10:22:55
+10:22:55:304 - setup.ps1 - Instalation duration: 00:00:06.1528310
+10:22:55:366 - setup.ps1 - Please reboot to complete the installation.
+10:08:41:965 - setup.ps1 - Silent Installation started at 10-28-2016 10:08:41
+10:08:43:965 - setup.ps1 - This script was ran already. Loading settings from silent-installation-progressConfig.xml. Any remaining steps will be continued.
+10:18:49:808 - setup.ps1 - Task PISystem-Silent-Install-Resume already exist. No need to create it
+10:18:49:844 - setup.ps1 - Setup will proceed with package PS Task - Package:  - Type: PSCodeBlock - Install: 0
+10:18:51:899 - Utils.psm1 - Task PISystem-Silent-Install-Resume was removed
+10:18:51:914 - setup.ps1 - Silent Installation finished at 10-28-2016 10:18:51
+10:18:51:921 - setup.ps1 - Instalation duration: 00:10:08.2814494
+10:18:51:927 - setup.ps1 - Please reboot to complete the installation.
+12:46:53:430 - setup.ps1 - Silent Installation started at 11-01-2016 12:46:53
+12:46:53:591 - setup.ps1 - This script was ran already. Loading settings from silent-installation-progressConfig.xml. Any remaining steps will be continued.
+12:46:57:473 - setup.ps1 - Task PISystem-Silent-Install-Resume already exist. No need to create it
+12:46:57:493 - setup.ps1 - Setup will proceed with package PS Task - Package:  - Type: PSCodeBlock - Install: 0
+12:46:59:415 - Utils.psm1 - Task PISystem-Silent-Install-Resume was removed
+12:46:59:431 - setup.ps1 - Silent Installation finished at 11-01-2016 12:46:59
+12:46:59:438 - setup.ps1 - Instalation duration: 00:00:05.9094133
+12:46:59:444 - setup.ps1 - Please reboot to complete the installation.
