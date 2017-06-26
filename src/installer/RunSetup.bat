@@ -7,8 +7,6 @@ mode con:cols=180 lines=2500
 
 REM Add some settings to be applied to the local server
 REM ===================================================
-REM Definition of the execution policy
-powershell Set-ExecutionPolicy remoteSigned -Scope Process 
 
 REM Definition of the execution policy
 powershell Set-ExecutionPolicy Unrestricted -Scope Process
