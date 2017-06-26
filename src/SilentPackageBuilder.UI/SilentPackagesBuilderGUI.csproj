@@ -320,7 +320,7 @@
       :: Copy to buid folder
       ::----------------------------------------
       :copytoBuildFolder current location is the /bin/debug going to the solution level
-      SET output="..\..\..\Build"
+      SET output="..\..\..\..\Build"
       if not exist "%25output%25" mkdir "%25output%25"
 
       :: ------------ BUILD  -----------------
@@ -332,7 +332,7 @@
       robocopy "$(SolutionDir)src\installer\." "%25pstemp%25\." /MIR /XD bin obj  /XF *.psd1 *.pssproj *.txt *.xml
 
       :: --- Silent packages builder main files
-      robocopy "$(TargetDir)." "%25output%25\."  SilentPackagesBuilder.exe SilentPackagesBuilder.pdb SilentPackagesBuilder.exe.config /XO /NJH /NP /S
+      robocopy "$(TargetDir)." "%25output%25\."  SilentPackagesBuilder.exe SilentPackagesBuilder.pdb SilentPackagesBuilder.exe.config log4net.config.xml /XO /NJH /NP /S
 
       :: --- silent packages builder supporting binaries
       SET bin="..\..\..\..\Build\Bin"

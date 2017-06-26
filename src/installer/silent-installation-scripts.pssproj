@@ -37,6 +37,7 @@
     <Compile Include="Modules\SQL.psm1" />
     <Compile Include="Modules\Utils.psm1" />
     <Compile Include="Modules\Windows.psm1" />
+    <Compile Include="RunSetup.bat" />
     <Compile Include="SetupVariablesDefinitions.psd1" />
     <Compile Include="setup.ps1" />
   </ItemGroup>

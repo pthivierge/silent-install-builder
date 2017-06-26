@@ -63,7 +63,7 @@ Function Add-MemberToPICollective([String]$PICollectiveName,[string]$PISecondary
 	$Connection=Connect-PIDataArchive -PIDataArchiveMachineName $PIPrimaryMember
 	$Status=Add-PICollectiveMember -Name $PISecondaryMember -PICollective (Get-PICollective -Connection ($Connection))
 	Add-Log "Add-MemberToPICollective:: Collective Name: $PICollectiveName, Member added: $PISecondaryMember" 
-
+}
 
 Function Add-PIMappingToPIDataArchive([string]$WindowsAccountName,[string]$PIIdentity,[string]$PIDataArchiveName)
 {
