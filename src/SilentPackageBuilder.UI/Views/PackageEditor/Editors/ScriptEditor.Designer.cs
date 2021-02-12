@@ -37,8 +37,11 @@
             this.scintilla1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.scintilla1.CaretForeColor = System.Drawing.Color.Blue;
             this.scintilla1.Lexer = ScintillaNET.Lexer.PowerShell;
             this.scintilla1.Location = new System.Drawing.Point(0, 19);
+            this.scintilla1.Margins.Left = 10;
+            this.scintilla1.Margins.Right = 10;
             this.scintilla1.Name = "scintilla1";
             this.scintilla1.Size = new System.Drawing.Size(884, 302);
             this.scintilla1.TabIndex = 0;

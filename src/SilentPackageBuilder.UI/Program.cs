@@ -82,13 +82,12 @@ namespace SilentPackagesBuilderGUI
 
         public static void ShowPackageEditor(IInstallationStep step)
         {
-            if (UserSettings.Default.UIOpenEditorOnAdd)
-            {
+         
                 var f = new frmPackageEditor(step);
                 f.WindowState = FormWindowState.Minimized;
                 f.Show(_mainForm);
                 f.WindowState = FormWindowState.Normal;
-            }
+            
         }
 
         private static void SaveUserSettings(object sender, PropertyChangedEventArgs e)

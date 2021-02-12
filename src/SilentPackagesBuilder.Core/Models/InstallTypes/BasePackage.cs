@@ -37,7 +37,7 @@ namespace SilentPackagesBuilder.Core
         /// <summary>
         /// Unique Id of the package
         /// </summary>
-        public Guid Id { get; }=new Guid();
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Name that is displayed during the installation process in logs 

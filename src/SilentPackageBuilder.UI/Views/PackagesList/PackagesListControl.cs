@@ -32,6 +32,7 @@ namespace SilentPackagesBuilder.Views
         private BindingSource _bindingSource = new BindingSource();
         private PackagesListViewModel _viewModel = null;
         private InstallModel _model;
+        private IInstallationStep _selectedItem;
 
         public DataGridView DataGridView { get { return dataGridView; } }
 
@@ -163,9 +164,14 @@ namespace SilentPackagesBuilder.Views
                 var grid = (DataGridView)sender;
                 if(grid.SelectedRows.Count<=0)
                     return;
+
                 IInstallationStep step = (IInstallationStep)grid.SelectedRows[0].DataBoundItem;
                 EditInstallStep(step);
             }
+
+ 
+
+
         }
 
         private void ConfigureEvents()
@@ -257,6 +263,53 @@ namespace SilentPackagesBuilder.Views
         private void UpdatePackageGenerationProgress(int progressPercent)
         {
             toolStripProgressBar1.Value = progressPercent;
+        }
+
+        private void dataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                contextMenuStrip1.Show(Cursor.Position.X, Cursor.Position.Y);
+            }
+        }
+
+        private void dataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                dataGridView.CurrentCell = dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                // Can leave these here - doesn't hurt
+                dataGridView.Rows[e.RowIndex].Selected = true;
+                dataGridView.Focus();
+
+                _selectedItem = (IInstallationStep)dataGridView.Rows[e.RowIndex].DataBoundItem;
+
+                
+                }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void moveUpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           if(_selectedItem!=null)
+            {
+                _model.MoveUp(_selectedItem);
+                dataGridView.Refresh();
+            }
+                
+
+        }
+
+        private void moveDownToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_selectedItem != null)
+            {
+                _model.MoveDown(_selectedItem);
+                dataGridView.Refresh();
+            }
         }
     }
 

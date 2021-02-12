@@ -34,24 +34,22 @@
             // 
             // packageEditorControl1
             // 
-            this.packageEditorControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.packageEditorControl1.Location = new System.Drawing.Point(-1, 15);
-            this.packageEditorControl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.packageEditorControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.packageEditorControl1.Location = new System.Drawing.Point(18, 14);
+            this.packageEditorControl1.Margin = new System.Windows.Forms.Padding(4);
             this.packageEditorControl1.Name = "packageEditorControl1";
-            this.packageEditorControl1.Size = new System.Drawing.Size(1031, 473);
-            this.packageEditorControl1.TabIndex = 0;
+            this.packageEditorControl1.Size = new System.Drawing.Size(898, 500);
+            this.packageEditorControl1.TabIndex = 2;
             // 
             // frmPackageEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1031, 490);
+            this.ClientSize = new System.Drawing.Size(935, 528);
             this.Controls.Add(this.packageEditorControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmPackageEditor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Package Editor";
             this.Load += new System.EventHandler(this.frmPackageEditor_Load);
             this.ResumeLayout(false);

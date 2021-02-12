@@ -26,13 +26,23 @@ namespace SilentPackagesBuilder.Core
 {
     [Serializable]
     [XmlType("PowerShellCodeBlock")]
-    [ImplementPropertyChanged]
+    [AddINotifyPropertyChangedInterface]
     public class PowerShellCodeBlock : BasePackage
     {
+
         public PowerShellCodeBlock()
         {
+            this.Type = PackageType.PowershellCodeBlock;
+            this.Id = Guid.NewGuid();
+            DisplayName = "Powershell Code Block ";
+
+        }
+
+        public PowerShellCodeBlock(int displayNumber=1)
+        {
             this.Type=PackageType.PowershellCodeBlock;
-            DisplayName = "Powershell Code Block";
+            this.Id = Guid.NewGuid();
+            DisplayName = "Powershell Code Block " + displayNumber;
 
         }
 

@@ -24,7 +24,7 @@ namespace SilentPackagesBuilder.Core
 {
     [Serializable]
     [XmlType("UserVariable")]
-    [ImplementPropertyChanged]
+    [AddINotifyPropertyChangedInterface]
     public class UserVariable
     { 
         public string Id { get; set; }

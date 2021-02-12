@@ -60,10 +60,11 @@ namespace SilentPackagesBuilder.Views.PackageEditor
             scintilla1.StyleResetDefault();
             scintilla1.Styles[Style.Default].Font = "Lucida Console";
             scintilla1.Styles[Style.Default].Size = 9;
+            
             scintilla1.StyleClearAll();
 
+
             
-       
             scintilla1.Styles[Style.PowerShell.Default].ForeColor = Color.Black;
             
            // scintilla1.Styles[Style.PowerShell.Identifier].ForeColor = Color.FromArgb(148, 43, 226);
@@ -83,6 +84,8 @@ namespace SilentPackagesBuilder.Views.PackageEditor
             scintilla1.Styles[Style.PowerShell.Number].ForeColor = Color.FromArgb(128, 0, 128);
             scintilla1.Styles[Style.PowerShell.String].ForeColor = Color.FromArgb(139, 0, 0); // Red
             scintilla1.Styles[Style.PowerShell.Character].ForeColor = Color.FromArgb(139, 0, 0); // Red
+
+            
 
             /*
             Set keyword indexes:

@@ -36,18 +36,21 @@
             this.propertyGrid1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.propertyGrid1.Location = new System.Drawing.Point(12, 12);
+            this.propertyGrid1.Location = new System.Drawing.Point(9, 10);
+            this.propertyGrid1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(629, 370);
+            this.propertyGrid1.Size = new System.Drawing.Size(472, 301);
             this.propertyGrid1.TabIndex = 0;
             // 
             // frmOptions
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(653, 394);
+            this.ClientSize = new System.Drawing.Size(490, 320);
             this.Controls.Add(this.propertyGrid1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmOptions";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Options";
             this.ResumeLayout(false);
 

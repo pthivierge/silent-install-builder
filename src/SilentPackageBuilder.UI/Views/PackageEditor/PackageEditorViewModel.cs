@@ -46,10 +46,45 @@ namespace SilentPackagesBuilder.Views
             }
         }
 
+    
+
         public PackageType PackageType
         {
             get { return _model.Type; }
 
+        }
+
+        public String FileInformation
+        {
+            get
+            {
+                if(!(_model is IHasInstallFile))
+                { return "N/A"; }
+
+                var _modelwInstallFile = (IHasInstallFile)_model;
+                if(_modelwInstallFile.FileInfo!=null)
+                {
+                    var fi = _modelwInstallFile.FileInfo;
+                    String fileInformation = String.Format("File Name: {0}{1}File Version: {2}{3}File Size: {4}", fi.FileName,Environment.NewLine, fi.FileVersion,Environment.NewLine, BytesToString(fi.FileBytes));
+                    return fileInformation;
+                }
+
+                return "N/A";  // case else... normally should not get there.
+
+
+            }
+
+        }
+
+        private String BytesToString(long byteCount)
+        { // https://stackoverflow.com/questions/281640/how-do-i-get-a-human-readable-file-size-in-bytes-abbreviation-using-net
+            string[] suf = { "B", "KB", "MB", "GB", "TB", "PB", "EB" }; //Longs run out around EB
+            if (byteCount == 0)
+                return "0" + suf[0];
+            long bytes = Math.Abs(byteCount);
+            int place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
+            double num = Math.Round(bytes / Math.Pow(1024, place), 1);
+            return (Math.Sign(byteCount) * num).ToString() + suf[place];
         }
 
 
@@ -76,6 +111,16 @@ namespace SilentPackagesBuilder.Views
                 }
 
                 
+
+            }
+
+            set
+            {
+                if (_model is IHasInstallFile)
+                {
+                    ((IHasInstallFile) _model).FileInfo.FilePath = value;
+                    this.OnPropertyChanged(nameof(PackagePath));
+                }
 
             }
 

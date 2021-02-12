@@ -181,16 +181,19 @@ namespace SilentPackagesBuilder
 
         }
 
-#endregion
+        #endregion
 
-
+        private int PowerShellBlockCount = 0;
         private void btnNewPowershellScript_Click(object sender, EventArgs e)
         {
-            var step = new PowerShellCodeBlock();
-
+            PowerShellBlockCount++;
+            var step = new PowerShellCodeBlock(PowerShellBlockCount);
             _model.Add(step);
-
-           Program.ShowPackageEditor(step);
+            
+            if (UserSettings.Default.UIOpenEditorOnAdd)
+            {
+                Program.ShowPackageEditor(step);
+            }
         }
 
        
@@ -200,8 +203,25 @@ namespace SilentPackagesBuilder
             // safety check - should not happen
             if (_model != null)
             {
-                var f=new frmNewPackage(_model);
-                f.ShowDialog();
+                IInstallationStep step;
+
+                using (var f = new frmNewPackage())
+                {
+                    var res = f.ShowDialog();
+                    if(res==DialogResult.OK)
+                    {
+                        step = f.CurrentInstallationStep;
+                        _model.Add(step);
+
+                        if (UserSettings.Default.UIOpenEditorOnAdd)
+                        {
+                            Program.ShowPackageEditor(step);
+                        }
+                    }
+                }
+
+                
+
             }
         }
 
@@ -211,6 +231,11 @@ namespace SilentPackagesBuilder
         {
             var frm=new frmOptions();
             frm.ShowDialog();
+        }
+
+        private void linkDefineVariables_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
         }
     }
 }

@@ -25,12 +25,13 @@ namespace SilentPackagesBuilder.Core
 {
     [Serializable]
     [XmlType("PIDataArchive")]
-    [ImplementPropertyChanged]
+    [AddINotifyPropertyChangedInterface]
     public class PIDataArchive : BasePackage, IHasIniReplacements, IHasInstallFile
     {
-        public PIDataArchive()
+        public PIDataArchive() 
         {
-            this.Type = PackageType.PIDataArchive;
+            this.Type = PackageType.PIDataArchiveLegacy;
+            this.Id = Guid.NewGuid();
         }
 
         public PackageFileInfo FileInfo { get; set; }

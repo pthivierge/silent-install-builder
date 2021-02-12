@@ -59,6 +59,37 @@ namespace SilentPackagesBuilder
             }
             position = position == -1 ? _installationSteps.Count : position;
             _installationSteps.Insert(position, installationStep);
+            
+        }
+
+        public void MoveUp(IInstallationStep installationStep)
+        {
+
+            int current_pos = -1;
+            current_pos = _installationSteps.ToList().FindIndex(x => x.Id == installationStep.Id);
+            if (current_pos == 0) { return; }
+
+
+                _installationSteps.RaiseListChangedEvents = false;
+                IInstallationStep tmp = _installationSteps[current_pos - 1];
+                _installationSteps.RemoveAt(current_pos - 1);
+                _installationSteps.Insert(current_pos, tmp);
+
+
+        }
+
+        public void MoveDown(IInstallationStep installationStep)
+        {
+
+            int current_pos = -1;
+            current_pos = _installationSteps.ToList().FindIndex(x => x.Id == installationStep.Id);
+            if (current_pos >= _installationSteps.Count-1) { return; }
+
+            _installationSteps.RaiseListChangedEvents = false;
+            IInstallationStep tmp = _installationSteps[current_pos + 1];
+            _installationSteps.RemoveAt(current_pos + 1);
+            _installationSteps.Insert(current_pos, tmp);
+
 
         }
 

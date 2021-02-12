@@ -40,21 +40,17 @@ namespace SilentPackagesBuilder.Views
         {
             InitializeComponent();
             _logger.InfoFormat("{0} control initialized", this.GetType().Name);
-
-            
-
-
+            btnSelectPackage.Enabled = true;
         }
 
 
-        public void SetModel(IInstallationStep model)
+        public void SetModel(IInstallationStep installationStep)
         {
-            _model = model;
-            _viewModel = new PackageEditorViewModel(model);
-            
-            InitializeDataBindings();
+            _model = installationStep;
+            _viewModel = new PackageEditorViewModel(installationStep);
 
-            SetEditorType(model);
+            InitializeDataBindings();
+            SetEditorType(installationStep);
         }
 
         private void InitializeDataBindings()
@@ -72,15 +68,16 @@ namespace SilentPackagesBuilder.Views
                 // assign the model to the binding source, binding source is the key component for the databinding to work
                 _bindingSource.DataSource = _viewModel;
 
-                
                 txtDisplayName.DataBindings.Clear();
                 txtPackageType.DataBindings.Clear();
                 txtPathtoFile.DataBindings.Clear();
-                
+                txtFileInfo.DataBindings.Clear();
+
 
                 MVVMUtils.AddDataBinding(txtDisplayName, "Text", _bindingSource, nameof(_viewModel.DisplayName));
                 MVVMUtils.AddDataBinding(txtPackageType, "Text", _bindingSource, nameof(_viewModel.PackageType));
                 MVVMUtils.AddDataBinding(txtPathtoFile, "Text", _bindingSource, nameof(_viewModel.PackagePath));
+                MVVMUtils.AddDataBinding(txtFileInfo, "Text", _bindingSource, nameof(_viewModel.FileInformation));
 
 
                 _logger.InfoFormat("databinding initialized");
@@ -106,14 +103,15 @@ namespace SilentPackagesBuilder.Views
                 case PackageType.PowershellCodeBlock:
                     //AddControl(new IniReplacementsEditor());
                     AddControl(new ScriptEditor());
+                    btnSelectPackage.Enabled = false;
                     break;
                 case PackageType.Executable:
                     AddControl(new ExecutableParametersEditor());
                     break;
-                case PackageType.PIDataArchive:
+                case PackageType.PIDataArchiveLegacy:
                     AddControl(new IniReplacementsEditor());
                     break;
-                case PackageType.OSIAutoExtractSetupPackage:
+                case PackageType.OSIAutoExtractSetupPackageLegacy:
                     AddControl(new IniReplacementsEditor());
                     break;
             }
@@ -128,6 +126,27 @@ namespace SilentPackagesBuilder.Views
             ctrl.SetModel(_model);
         }
 
+        private void PackageEditorControl_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSelectPackage_Click(object sender, EventArgs e)
+        {
+            using (var f = new frmSelectPackage((IHasInstallFile)_model))
+            {
+                var res=f.ShowDialog();
+                
+                if (res == DialogResult.OK)
+                {
+                    _viewModel.PackagePath = ((IHasInstallFile)f.CurrentInstallationStep).FileInfo.FilePath;
+                    
+                }
+
+               
+
+            };
+        }
     }
 }
 

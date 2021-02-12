@@ -22,9 +22,10 @@ namespace SilentPackagesBuilder.Core
 {
     public enum PackageType
     {
+        Executable,
         PowershellCodeBlock,
-        OSIAutoExtractSetupPackage,
-        PIDataArchive,
-        Executable
+        OSIAutoExtractSetupPackageLegacy,
+        PIDataArchiveLegacy,
+        
     }
 }

@@ -36,10 +36,10 @@
             // 
             this.packagesListControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.packagesListControl1.Location = new System.Drawing.Point(12, 391);
-            this.packagesListControl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.packagesListControl1.Location = new System.Drawing.Point(9, 318);
+            this.packagesListControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.packagesListControl1.Name = "packagesListControl1";
-            this.packagesListControl1.Size = new System.Drawing.Size(1175, 219);
+            this.packagesListControl1.Size = new System.Drawing.Size(881, 178);
             this.packagesListControl1.TabIndex = 1;
             // 
             // packageEditorControl1
@@ -48,20 +48,20 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.packageEditorControl1.BackColor = System.Drawing.SystemColors.Control;
-            this.packageEditorControl1.Location = new System.Drawing.Point(16, 15);
-            this.packageEditorControl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.packageEditorControl1.Location = new System.Drawing.Point(12, 12);
+            this.packageEditorControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.packageEditorControl1.Name = "packageEditorControl1";
-            this.packageEditorControl1.Size = new System.Drawing.Size(1171, 363);
+            this.packageEditorControl1.Size = new System.Drawing.Size(878, 295);
             this.packageEditorControl1.TabIndex = 0;
             // 
             // PackageEditorDemo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1203, 618);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(902, 502);
             this.Controls.Add(this.packagesListControl1);
             this.Controls.Add(this.packageEditorControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PackageEditorDemo";
             this.Text = "PackageEditorDemo";
             this.Load += new System.EventHandler(this.PackageEditorDemo_Load);

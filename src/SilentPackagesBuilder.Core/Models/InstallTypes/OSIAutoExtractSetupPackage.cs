@@ -25,12 +25,13 @@ namespace SilentPackagesBuilder.Core
 {
     [Serializable]
     [XmlType("OSIAutoExtractSetupPackage")]
-    [ImplementPropertyChanged]
+    [AddINotifyPropertyChangedInterface]
     public class OSIAutoExtractSetupPackage : BasePackage, IHasIniReplacements, IHasInstallFile
     {
         public OSIAutoExtractSetupPackage()
         {
-            this.Type=PackageType.OSIAutoExtractSetupPackage;
+            this.Type=PackageType.OSIAutoExtractSetupPackageLegacy;
+            this.Id = Guid.NewGuid();
         }
 
         public PackageFileInfo FileInfo { get; set; }

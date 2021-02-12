@@ -36,7 +36,7 @@ namespace SilentPackagesBuilder
         /// <summary>
         /// Unique Id of the package
         /// </summary>
-        Guid Id { get;}
+        Guid Id { get; set; }
 
         /// <summary>
         /// Name that is displayed during the installation process in logs 

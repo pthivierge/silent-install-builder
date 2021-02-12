@@ -48,6 +48,7 @@
             this.ClientSize = new System.Drawing.Size(655, 371);
             this.Controls.Add(this.variablesDefinitionControl1);
             this.Name = "frmDefineVariables";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Define Variables";
             this.ResumeLayout(false);
 

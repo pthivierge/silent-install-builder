@@ -24,7 +24,7 @@ using SilentPackagesBuilder.Core;
 
 namespace SilentPackagesBuilder.Views
 {
-    [ImplementPropertyChanged]
+    [AddINotifyPropertyChangedInterface]
     public class PackagesListViewModel : BaseViewModel
     {
         private InstallModel _model;

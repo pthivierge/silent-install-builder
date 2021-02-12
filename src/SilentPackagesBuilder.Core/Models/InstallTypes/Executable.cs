@@ -24,12 +24,13 @@ namespace SilentPackagesBuilder.Core
 {
     [Serializable]
     [XmlType("Executable")]
-    [ImplementPropertyChanged]
+    [AddINotifyPropertyChangedInterface]
     public class Executable : BasePackage, IHasInstallFile
     {
-        public Executable()
+        public Executable() 
         {
             this.Type=PackageType.Executable;
+            this.Id = Guid.NewGuid();
         }
 
         public PackageFileInfo FileInfo { get; set; }

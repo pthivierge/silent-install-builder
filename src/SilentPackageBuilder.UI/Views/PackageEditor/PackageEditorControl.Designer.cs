@@ -38,6 +38,8 @@
             this.txtPackageType = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPathtoFile = new System.Windows.Forms.TextBox();
+            this.btnSelectPackage = new System.Windows.Forms.Button();
+            this.txtFileInfo = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtDisplayName
@@ -86,9 +88,9 @@
             this.configurationContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.configurationContainer.Location = new System.Drawing.Point(4, 87);
+            this.configurationContainer.Location = new System.Drawing.Point(4, 118);
             this.configurationContainer.Name = "configurationContainer";
-            this.configurationContainer.Size = new System.Drawing.Size(796, 240);
+            this.configurationContainer.Size = new System.Drawing.Size(879, 343);
             this.configurationContainer.TabIndex = 67;
             // 
             // txtPackageType
@@ -113,17 +115,41 @@
             // 
             // txtPathtoFile
             // 
-            this.txtPathtoFile.Location = new System.Drawing.Point(455, 21);
+            this.txtPathtoFile.Location = new System.Drawing.Point(459, 22);
             this.txtPathtoFile.Margin = new System.Windows.Forms.Padding(2);
             this.txtPathtoFile.Name = "txtPathtoFile";
             this.txtPathtoFile.ReadOnly = true;
             this.txtPathtoFile.Size = new System.Drawing.Size(302, 20);
             this.txtPathtoFile.TabIndex = 77;
             // 
+            // btnSelectPackage
+            // 
+            this.btnSelectPackage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSelectPackage.Location = new System.Drawing.Point(775, 11);
+            this.btnSelectPackage.Name = "btnSelectPackage";
+            this.btnSelectPackage.Size = new System.Drawing.Size(84, 41);
+            this.btnSelectPackage.TabIndex = 78;
+            this.btnSelectPackage.Text = "Select Package";
+            this.btnSelectPackage.UseVisualStyleBackColor = true;
+            this.btnSelectPackage.Click += new System.EventHandler(this.btnSelectPackage_Click);
+            // 
+            // txtFileInfo
+            // 
+            this.txtFileInfo.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtFileInfo.ForeColor = System.Drawing.Color.White;
+            this.txtFileInfo.Location = new System.Drawing.Point(459, 47);
+            this.txtFileInfo.Multiline = true;
+            this.txtFileInfo.Name = "txtFileInfo";
+            this.txtFileInfo.Size = new System.Drawing.Size(300, 46);
+            this.txtFileInfo.TabIndex = 79;
+            this.txtFileInfo.Text = "FileName: xyz.exe\r\nFileVersion: 1.0.1";
+            // 
             // PackageEditorControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtFileInfo);
+            this.Controls.Add(this.btnSelectPackage);
             this.Controls.Add(this.txtPathtoFile);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPackageType);
@@ -133,7 +159,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Name = "PackageEditorControl";
-            this.Size = new System.Drawing.Size(803, 359);
+            this.Size = new System.Drawing.Size(886, 484);
+            this.Load += new System.EventHandler(this.PackageEditorControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,5 +176,7 @@
         private System.Windows.Forms.TextBox txtPackageType;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPathtoFile;
+        private System.Windows.Forms.Button btnSelectPackage;
+        private System.Windows.Forms.TextBox txtFileInfo;
     }
 }
