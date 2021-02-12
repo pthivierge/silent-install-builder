@@ -1,12 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "silent-installation-scripts", "src\installer\silent-installation-scripts.pssproj", "{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}"
-EndProject
-Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "silent-installation-scripts-tests", "src\powershell-tests\silent-installation-scripts-tests.pssproj", "{29F40B30-B78F-4995-9265-0B3B249FB0C1}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{A75BE5B6-682D-49D3-91BF-236A07DF26EA}"
 	ProjectSection(SolutionItems) = preProject
 		LICENSE.txt = LICENSE.txt
@@ -16,8 +12,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilentPackagesBuilderGUI", "src\SilentPackageBuilder.UI\SilentPackagesBuilderGUI.csproj", "{9DD10D98-2040-4650-AC55-2BF2498D65DF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilentPackagesBuilder.Core", "src\SilentPackagesBuilder.Core\SilentPackagesBuilder.Core.csproj", "{82FAB574-CD19-4491-BC1F-B02C0CD6E65F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilentPackageBuilder.Tests", "src\SilentPackageBuilder.Tests\SilentPackageBuilder.Tests.csproj", "{674C0840-9AE3-4DD0-8F7E-54E933CBF15B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Licenses", "Licenses", "{FDB96E0F-1919-4844-A973-2FF66A26305B}"
 	ProjectSection(SolutionItems) = preProject
@@ -29,20 +23,39 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Licenses", "Licenses", "{FD
 		licenses\Scintilla.NET.MIT.txt = licenses\Scintilla.NET.MIT.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Installation Scripts", "Installation Scripts", "{19FB9975-88DF-4DB7-9E36-28048205547C}"
+	ProjectSection(SolutionItems) = preProject
+		src\installer\7za.exe = src\installer\7za.exe
+		src\installer\InstallConfig.psd1 = src\installer\InstallConfig.psd1
+		src\installer\pilicense.dat = src\installer\pilicense.dat
+		src\installer\PSTestLogs.txt = src\installer\PSTestLogs.txt
+		src\installer\RunSetup.bat = src\installer\RunSetup.bat
+		src\installer\setup.ps1 = src\installer\setup.ps1
+		src\installer\SetupVariablesDefinitions.psd1 = src\installer\SetupVariablesDefinitions.psd1
+		src\installer\silent-installation-logs.txt = src\installer\silent-installation-logs.txt
+		src\installer\silent-installation-progressConfig.xml = src\installer\silent-installation-progressConfig.xml
+		src\installer\silent-installation-scripts.pssproj = src\installer\silent-installation-scripts.pssproj
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{DAFE9014-28E7-4631-BE03-6D3BF0B3E135}"
+	ProjectSection(SolutionItems) = preProject
+		src\installer\Modules\AF.psm1 = src\installer\Modules\AF.psm1
+		src\installer\Modules\Executable.psm1 = src\installer\Modules\Executable.psm1
+		src\installer\Modules\Logger.psm1 = src\installer\Modules\Logger.psm1
+		src\installer\Modules\OSISetup.psm1 = src\installer\Modules\OSISetup.psm1
+		src\installer\Modules\PIDataArchive.psm1 = src\installer\Modules\PIDataArchive.psm1
+		src\installer\Modules\PSLogs.txt = src\installer\Modules\PSLogs.txt
+		src\installer\Modules\SQL.psm1 = src\installer\Modules\SQL.psm1
+		src\installer\Modules\Utils.psm1 = src\installer\Modules\Utils.psm1
+		src\installer\Modules\Windows.psm1 = src\installer\Modules\Windows.psm1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.Build.0 = Release|Any CPU
-		{29F40B30-B78F-4995-9265-0B3B249FB0C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{29F40B30-B78F-4995-9265-0B3B249FB0C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{29F40B30-B78F-4995-9265-0B3B249FB0C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{29F40B30-B78F-4995-9265-0B3B249FB0C1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9DD10D98-2040-4650-AC55-2BF2498D65DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9DD10D98-2040-4650-AC55-2BF2498D65DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DD10D98-2040-4650-AC55-2BF2498D65DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,15 +64,16 @@ Global
 		{82FAB574-CD19-4491-BC1F-B02C0CD6E65F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82FAB574-CD19-4491-BC1F-B02C0CD6E65F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82FAB574-CD19-4491-BC1F-B02C0CD6E65F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{674C0840-9AE3-4DD0-8F7E-54E933CBF15B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{674C0840-9AE3-4DD0-8F7E-54E933CBF15B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{674C0840-9AE3-4DD0-8F7E-54E933CBF15B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{674C0840-9AE3-4DD0-8F7E-54E933CBF15B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FDB96E0F-1919-4844-A973-2FF66A26305B} = {A75BE5B6-682D-49D3-91BF-236A07DF26EA}
+		{19FB9975-88DF-4DB7-9E36-28048205547C} = {A75BE5B6-682D-49D3-91BF-236A07DF26EA}
+		{DAFE9014-28E7-4631-BE03-6D3BF0B3E135} = {19FB9975-88DF-4DB7-9E36-28048205547C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {051FE57C-A6D2-4AD5-9E2A-FD49E3FA43CB}
 	EndGlobalSection
 EndGlobal
