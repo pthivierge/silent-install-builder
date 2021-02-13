@@ -50,7 +50,7 @@ namespace SilentPackagesBuilder
         public static void CreateVariablesConfigurationFile(IList<UserVariable> userVariables, string outputFolder)
         {
 
-            if (userVariables == null || !userVariables.Any())
+            if (userVariables==null || !userVariables.Any() )
             {
                 _logger.Info("No user variable was found in the UsersVariable list.  No variables data file will be created.");
                 return;
@@ -71,10 +71,10 @@ namespace SilentPackagesBuilder
             {
                 rootObject.AppendProperty(NewProp(userVariable.Name, userVariable.Value));
             }
-
+            
             config.AddRange(rootObject.ToList(0));
             File.WriteAllLines(Path.Combine(outputFolder, UserSettings.Default.PackGenUserVariablesFileName), config);
-
+            
         }
 
         public static void CreateInstallConfigFromObjects(IEnumerable<IInstallationStep> packages, string outputFolder)
@@ -92,7 +92,7 @@ namespace SilentPackagesBuilder
             config.Add("# ");
 
             var rootObject = PsObject.GetPSObject();
-            rootObject.AppendProperty(NewProp("sourcePackagesDir", "SetupPackages"));
+            rootObject.AppendProperty(NewProp("sourcePackagesDir","SetupPackages"));
             rootObject.AppendProperty(NewProp("extractedPackagesDir", "ExtractedPackages"));
             var installPackagesArray = PsArray.GetArrayProperty("installPackages");
             // packages
@@ -103,7 +103,7 @@ namespace SilentPackagesBuilder
                 {
                     installPackagesArray.AppendObject(CreateCodeBlock(0, (PowerShellCodeBlock)package));
                 }
-
+                
 
                 if (package is PIDataArchive)
                 {
@@ -122,10 +122,10 @@ namespace SilentPackagesBuilder
 
             }
 
-            rootObject.AppendItem(installPackagesArray.ToList(0));
-            config.AddRange(rootObject.ToList(0));
-
-            File.WriteAllLines(Path.Combine(outputFolder, UserSettings.Default.PackGenConfigFileName), config);
+           rootObject.AppendItem(installPackagesArray.ToList(0)); 
+           config.AddRange(rootObject.ToList(0));
+           
+            File.WriteAllLines(Path.Combine(outputFolder,UserSettings.Default.PackGenConfigFileName),config);
 
             // check space for packages in the target dir
 
@@ -152,15 +152,11 @@ namespace SilentPackagesBuilder
                     int argsCount = 0;
                     while ((arg = sr.ReadLine()) != null)
                     {
-                        // ignore commented out lines
-                        if (arg.TrimStart().StartsWith("#"))
-                            continue;
-                        
-                            if (!string.IsNullOrWhiteSpace(arg))
-                            {
-                                argsCount++;
-                                arguments.AppendProperty($"'{arg}'");
-                            }
+                        if (!string.IsNullOrWhiteSpace(arg))
+                        {
+                            argsCount++;
+                            arguments.AppendProperty($"'{arg}'");
+                        }
                     }
                 }
 
@@ -198,7 +194,7 @@ namespace SilentPackagesBuilder
 
                 obj.AppendItem(iniFileReplaces.ToList(indent));
             }
-
+            
             return obj.ToList(indent);
         }
 
@@ -263,7 +259,7 @@ namespace SilentPackagesBuilder
         }
 
 
-
+   
         private static string NewProp(string name, string value)
         {
             return $"{name}='{value}'";
@@ -278,28 +274,28 @@ namespace SilentPackagesBuilder
         private string _objStart;
         private string _objEnd;
         private int count = 0;
-        private readonly List<string> lines = new List<string>();
+        private readonly List<string> lines=new List<string>();
         private int _indent;
         private string _propertyName;
-
+        
 
         public static PsArray GetArrayProperty(string propertyName)
         {
-            return new PsArray(propertyName, "@(", ")");
+            return new PsArray(propertyName, "@(",")");
         }
 
 
-        private PsArray(string property, string objStartString, string objEndString)
+        private PsArray(string property,string objStartString, string objEndString)
         {
             _propertyName = !string.IsNullOrEmpty(property) ? $"{property}=" : "";
             _objStart = objStartString;
             _objEnd = objEndString;
-
+            
         }
 
         public void AppendObject(List<string> item)
         {
-            if (lines.Count > 0)
+            if (lines.Count>0)
                 lines[lines.Count - 1] += ",";
 
             foreach (var line in item)
@@ -313,15 +309,15 @@ namespace SilentPackagesBuilder
             if (lines.Count > 0)
                 lines[lines.Count - 1] += ",";
             lines.Add(property);
-
+            
         }
 
         public List<string> ToList(int indent)
         {
-            var array = new List<string>();
+            var array=new List<string>();
             array.Add(Indent.Space(indent) + _propertyName);
-            array.Add(Indent.Space(indent) + _objStart);
-            lines.ForEach(l => array.Add(Indent.Space(indent + 1) + l));
+            array.Add(Indent.Space(indent)+_objStart);
+            lines.ForEach(l=>array.Add(Indent.Space(indent+1)+l));
             array.Add(Indent.Space(indent) + _objEnd);
 
             return array;
@@ -369,8 +365,8 @@ namespace SilentPackagesBuilder
         {
             var array = new List<string>();
             array.Add(Indent.Space(indent) + _objStart);
-            lines.ForEach(l => array.Add(Indent.Space(indent + 1) + l));
-            array.Add(Indent.Space(indent) + _objEnd);
+            lines.ForEach(l => array.Add(Indent.Space(indent+1) + l));
+            array.Add(Indent.Space(indent)+_objEnd);
 
             return array;
         }
