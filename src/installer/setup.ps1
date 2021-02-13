@@ -33,7 +33,7 @@ $CONFIG_FILE_UPDATED='InstallConfig - updated.psd1'
 $VARIABLES_FILE='SetupVariablesDefinitions.psd1'
 $PROGRESS_FILE='silent-installation-progressConfig.xml'
 $LOG_FILE='silent-installation-logs.txt'
-$SCHD_TSK_NAME='PISystem-Silent-Install-Resume'
+$SCHD_TSK_NAME='Silent-Install-Resume'
 
 # will wait a little before switching to the next package in case the last package asked for a restart.
 # time is in seconds
@@ -44,7 +44,7 @@ Logger\InitModule -logFileName $LOG_FILE
 
 # Stopwatch
 $StartTime = Get-Date -f "MM-dd-yyyy HH:mm:ss"
-Add-Log "PI System Silent Installation started at $StartTime"
+Add-Log "Silent Installation Started at $StartTime"
 $Time = [System.Diagnostics.Stopwatch]::StartNew()
 
 
@@ -236,7 +236,7 @@ function InstallSummary()
 {
 	$elapsed = $Time.Elapsed.ToString()
 	$EndTime = Get-Date -f "MM-dd-yyyy HH:mm:ss"
-	Add-Log "PI System Silent Installation finished at $EndTime"
+	Add-Log "Silent  Installation finished at $EndTime"
 	Add-Log "Instalation duration: $elapsed"
 	Add-Log "Installation completed."
 }
