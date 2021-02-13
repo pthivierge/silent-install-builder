@@ -26,8 +26,7 @@ This solution is composed of:
  
 # Development Environment Used
 
-Microsoft Visual Studio 2015
-Powershell Tools for visual studio 2015 (2017-06-23 - Not yet available for VS 2017)
+Microsoft Visual Studio 2019
 
 # How to Build and use
 

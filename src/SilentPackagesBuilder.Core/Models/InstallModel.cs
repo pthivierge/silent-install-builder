@@ -21,6 +21,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
+using System.Xml;
 using SilentPackagesBuilder.Core;
 
 
@@ -130,14 +131,21 @@ namespace SilentPackagesBuilder
 
             // Serialize 
             var serializer = GetSerializer();
-            FileStream fs = new FileStream(path, FileMode.Create);
+           
 
             var dataToSerialize = new List<object>();
             dataToSerialize.Add($"Generated with Silent Package Builder Version: {version}"); // adding the version in the file for information.  will not be deserializd... 
             dataToSerialize.AddRange(_installationSteps.Select(o => (object)o));
             dataToSerialize.Add((object)UserVariablesModel);
-            serializer.Serialize(fs, dataToSerialize);
-            fs.Close();
+           
+
+            XmlWriterSettings ws = new XmlWriterSettings();
+            ws.NewLineHandling = NewLineHandling.Entitize;
+            using (XmlWriter wr = XmlWriter.Create(path, ws))
+            {
+                serializer.Serialize(wr, dataToSerialize);
+            }
+
 
         }
 

@@ -39,24 +39,25 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtArguments.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtArguments.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtArguments.Location = new System.Drawing.Point(0, 15);
+            this.txtArguments.Location = new System.Drawing.Point(0, 25);
             this.txtArguments.Margin = new System.Windows.Forms.Padding(2);
             this.txtArguments.Multiline = true;
             this.txtArguments.Name = "txtArguments";
             this.txtArguments.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtArguments.Size = new System.Drawing.Size(681, 201);
+            this.txtArguments.Size = new System.Drawing.Size(681, 191);
             this.txtArguments.TabIndex = 46;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(-3, 0);
+            this.label3.Location = new System.Drawing.Point(2, 10);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(348, 13);
+            this.label3.Size = new System.Drawing.Size(409, 13);
             this.label3.TabIndex = 66;
-            this.label3.Text = "Enter the arguments to pass to the executable - one per line";
+            this.label3.Text = "Arguments List ( use one line per arg, # at start of the line to comment)";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // ExecutableParametersEditor
             // 

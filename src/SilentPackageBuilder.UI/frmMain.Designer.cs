@@ -84,7 +84,7 @@
             this.newToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripMenuItem1.Image")));
             this.newToolStripMenuItem1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.newToolStripMenuItem1.Name = "newToolStripMenuItem1";
-            this.newToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
+            this.newToolStripMenuItem1.Size = new System.Drawing.Size(184, 26);
             this.newToolStripMenuItem1.Text = "&New";
             this.newToolStripMenuItem1.Click += new System.EventHandler(this.NewProject_click);
             // 
@@ -93,35 +93,35 @@
             this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
             this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.openToolStripMenuItem.Text = "&Open (.sib)";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenProject_Click);
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(151, 6);
+            this.toolStripSeparator.Size = new System.Drawing.Size(181, 6);
             // 
             // saveToolStripMenuItem1
             // 
             this.saveToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem1.Image")));
             this.saveToolStripMenuItem1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
-            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
+            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(184, 26);
             this.saveToolStripMenuItem1.Text = "&Save (*.sib)";
             this.saveToolStripMenuItem1.Click += new System.EventHandler(this.Save_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.saveAsToolStripMenuItem.Text = "Save &As...(*.sib)";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.SaveProjectAs_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(151, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(181, 6);
             // 
             // toolsToolStripMenuItem
             // 
@@ -230,6 +230,7 @@
             this.packagesListControl1.Name = "packagesListControl1";
             this.packagesListControl1.Size = new System.Drawing.Size(810, 427);
             this.packagesListControl1.TabIndex = 0;
+            this.packagesListControl1.Load += new System.EventHandler(this.packagesListControl1_Load);
             // 
             // frmMain
             // 

@@ -237,5 +237,10 @@ namespace SilentPackagesBuilder
         {
 
         }
+
+        private void packagesListControl1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
