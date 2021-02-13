@@ -52,10 +52,5 @@ namespace SilentPackagesBuilder.Views.PackageEditor.Editors
                 MVVMUtils.AddDataBinding(txtArguments, "Text", _bindingsource, nameof(_model.Arguments));
             }
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
